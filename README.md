@@ -139,4 +139,6 @@ Matplotlib · Poetry · pytest
 
 ## License
 
-[MIT](LICENSE) © Zachary Phul
+© 2026 Zachary Phul. **All rights reserved.** The source is published here for
+viewing and evaluation only (portfolio / job application). Please do not copy,
+reuse, or redistribute it without permission. See [LICENSE](LICENSE).

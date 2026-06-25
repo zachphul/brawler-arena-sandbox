@@ -4,7 +4,7 @@ version = "0.1.0"
 description = "Portfolio-grade AI sandbox: a self-contained Pygame 'Brawler Arena' driven by a behavior-tree brain, a YOLO+OCR vision pipeline, and Bézier-curve kinematics. No live game, no networking — a pure simulation target for agent research."
 authors = ["zachp"]
 readme = "README.md"
-license = "MIT"
+license = "Proprietary"
 packages = [
     { include = "arena",   from = "src" },
     { include = "brain",   from = "src" },
