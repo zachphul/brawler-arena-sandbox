@@ -1,0 +1,39 @@
+[tool.poetry]
+name = "brawler-arena-sandbox"
+version = "0.1.0"
+description = "Portfolio-grade AI sandbox: a self-contained Pygame 'Brawler Arena' driven by a behavior-tree brain, a YOLO+OCR vision pipeline, and Bézier-curve kinematics. No live game, no networking — a pure simulation target for agent research."
+authors = ["zachp"]
+readme = "README.md"
+license = "MIT"
+packages = [
+    { include = "arena",   from = "src" },
+    { include = "brain",   from = "src" },
+    { include = "drivers", from = "src" },
+    { include = "eyes",    from = "src" },
+    { include = "hands",   from = "src" },
+]
+
+[tool.poetry.dependencies]
+# NOTE: torch-based vision deps (ultralytics, easyocr) have no Python 3.14
+# wheels yet. Use a 3.12 interpreter for the full install:  poetry env use 3.12
+python = ">=3.10,<3.14"
+numpy = ">=1.26,<3.0"
+pygame = "^2.6"
+py-trees = "^2.2"
+matplotlib = "^3.8"
+
+[tool.poetry.group.vision.dependencies]
+# Heavy ML stack — installed separately once a 3.12 env is active.
+ultralytics = "^8.2"
+easyocr = "^1.7"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.0"
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+
+[build-system]
+requires = ["poetry-core>=1.5.0"]
+build-backend = "poetry.core.masonry.api"
